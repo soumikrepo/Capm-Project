@@ -1,0 +1,65 @@
+GET http://localhost:4004/CatalogService
+
+### Get the metadata
+GET http://localhost:4004/CatalogService/$metadata
+
+### Get the employee
+GET http://localhost:4004/CatalogService/employee
+
+###Create a new employee
+POST http://localhost:4004/CatalogService/employee
+Content-Type: application/json
+
+    {
+    "validFrom": "2024-03-20T00:00:00.000Z",
+    "validTo": "2298-01-04T00:00:00.000Z",
+    "nameFirst": "Soumik",
+    "nameMiddle": null,
+    "nameLast": "Saha",
+    "nameInitials": null,
+    "DOB": "1998-03-15",
+    "AGE": 0,
+    "sex": "M",
+    "language": "B",
+    "phoneNumber": "+91 9007734806",
+    "email": "soumikcse16@gmail.com",
+    "loginName": "SOUMIK",
+    "currency_code": "INR",
+    "salaryAmount": 22478,
+    "accountNumber": "111222333",
+    "bankId": "510000655",
+    "bankName": "SBI"
+    }
+
+### Read the employee with the help of id
+GET http://localhost:4004/CatalogService/employee/099ae474-68c0-408e-805f-bbb946e34f80
+
+### Update the employee details using PUT
+PUT http://localhost:4004/CatalogService/employee/49685409-a8f7-44e8-acaf-45ab555f5527
+Content-Type: application/json
+
+{
+"nameFirst": "Ram",
+"currency_code": "EUR",
+"nameLast": "Das",
+"validFrom": "2024-03-20T00:00:00.000Z",
+"validTo": "2298-01-04T00:00:00.000Z",
+"salaryAmount": 100000
+}
+
+### Update the employee details using PATCH
+PATCH http://localhost:4004/CatalogService/employee/d9a96b1a-e771-4c69-9e0a-d6ef90ab9179
+Content-Type: application/json
+
+{
+"nameFirst": "Ram",
+"currency_code": "EUR",
+"nameLast": "Das",
+"validFrom": "2024-03-20T00:00:00.000Z",
+"validTo": "2298-01-04T00:00:00.000Z",
+"salaryAmount": 10000,
+"DOB": "1998-03-15"
+}
+
+### Delete Employee
+DELETE http://localhost:4004/CatalogService/employee/7a586579-f01a-4c6f-b396-2265d17b16c7
